@@ -28,7 +28,7 @@ Requirements:
 
 var expect = require("chai").expect;
 
-var stringCalculator = require('../app/index.js');
+var stringCalculator = require("../app/calculator.js");
 
 describe("stringCalculator", function() {
 

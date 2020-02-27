@@ -4,7 +4,7 @@
 
 We are building an calculator app that can together a string of numbers.
 
-## Requirements
+## High level requirements
 
 1. Create a simple String calculator with a method that accepts a string numbers
 2. The method can take 0, 1 or 2 numbers,
@@ -14,11 +14,11 @@ We are building an calculator app that can together a string of numbers.
    you did not think about.
 5. Remember to refactor after each passing test
 
-#####Requirements:
+### Requirements:
 
 1. Allow the Add method to handle an unknown amount of numbers
 2. Allow the Add method to handle new lines between numbers (instead of commas).
-   the following input is ok: “1\n2,3” (will equal 6)
+   the following input is ok: “1\n2\n3” or “1\n2,3” (will equal 6)
 
 3. Support different delimiters
    to change a delimiter, the beginning of the string will contain a separate line that looks like this:
