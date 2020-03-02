@@ -31,8 +31,15 @@ var expect = require("chai").expect;
 var stringCalculator = require("../app/calculator.js");
 
 describe("stringCalculator", function() {
+  it("should return 0 when no values are passed", function() {
+    expect(stringCalculator()).to.equal(0);
+  });
 
-    it("should return 0", function() {
-        expect(stringCalculator()).to.equal(0);
-    });
+  it("should return 0 when the string is empty", function() {
+    expect(stringCalculator("")).to.equal(0);
+  });
+
+  it("should return 0", function () {
+    expect(stringCalculator("1,2,3")).to.equal(6);
+  });
 });
