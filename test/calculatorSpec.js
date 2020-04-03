@@ -3,7 +3,7 @@ String Calculator Kata
   Create a simple String calculator with a method int Add(string numbers)
 
   1. The method can take 0, 1 or 2 numbers,
-  and will return their sum (for an empty string it will return 0) for example “” or “1” or “1,2”
+  and will return their sum (for an empty string it will return 0) for example “” or “1” or “1,2”, "1,4,6,7"
 
   2. Start with the simplest test case of an empty string and move to 1 and two numbers
 
@@ -31,8 +31,14 @@ var expect = require("chai").expect;
 var stringCalculator = require("../app/calculator.js");
 
 describe("stringCalculator", function() {
-
-    it("should return 0", function() {
-        expect(stringCalculator()).to.equal(0);
-    });
+  it("should return sum of the comma delimited numbers", function() {
+    expect(stringCalculator("10")).to.equal(10);
+    expect(stringCalculator("10, 20")).to.equal(30);
+    expect(stringCalculator("10, 20, 50")).to.equal(80);
+  });
+  it("should handle new line as the only seperator between numbers", function() {
+    expect(stringCalculator("10\n")).to.equal(10);
+    expect(stringCalculator("10\n20\n")).to.equal(30);
+    expect(stringCalculator("\n10\n20\n50")).to.equal(80);
+  });
 });
