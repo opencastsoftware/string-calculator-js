@@ -13,7 +13,7 @@ String Calculator Kata
   Remember to refactor after each passing test
 
 Requirements:
-  1. Allow the Add method to handle an unknown amount of numbers
+  1. Allow the calculator to handle an unknown amount of numbers: 0, 1, 2, ...
 
   2. Allow the Add method to handle new lines between numbers (instead of commas). 
       The following input is ok:  “1\n2,3”  (will equal 6)
@@ -32,9 +32,20 @@ var expect = require("chai").expect;
 
 var stringCalculator = require("../app/calculator.js");
 
-describe("stringCalculator", function() {
+describe("stringCalculator", function () {
+  it("should return 0", function () {
+    expect(stringCalculator()).to.equal(0);
+  });
 
-    it("should return 0", function() {
-        expect(stringCalculator()).to.equal(0);
-    });
+  it("should return value of the string when there is only one number", function () {
+    expect(stringCalculator("1")).to.equal(1);
+  });
+
+  it("should return 0 when the string is empty", function () {
+    expect(stringCalculator("")).to.equal(0);
+  });
+
+  it("should return 10", function () {
+    expect(stringCalculator("1,2,3,4")).to.equal(10);
+  });
 });
