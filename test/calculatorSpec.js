@@ -48,4 +48,16 @@ describe("stringCalculator", function () {
   it("should return 10", function () {
     expect(stringCalculator("1,2,3,4")).to.equal(10);
   });
+
+  it("should return 10", function () {
+    expect(stringCalculator("1,2,\n3,4")).to.equal(10);
+  });
+
+  it("should return the sum when the delimiter is configured to be a `:`", function () {
+    expect(stringCalculator("//:\n1:2:3:4")).to.equal(10);
+  });
+
+  it("should return the sum when the delimiter is configured to be a `>`", function () {
+    expect(stringCalculator("//>\n1>2>3>4")).to.equal(10);
+  });
 });
